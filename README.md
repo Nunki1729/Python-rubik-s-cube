@@ -84,13 +84,13 @@ The library uses an absolute base orientation (alpha, 0) to define positions con
 
 -  Future improvements may include:
 
-  · Adding memory to store cube states and move history
+      · Adding memory to store cube states and move history
 
-  · More solving methods
+      · More solving methods
 
-  · A set_cube_friendly() function for easier cube setup
+      · A set_cube_friendly() function for easier cube setup
 
-  · A better representation of the cube
+      · A better representation of the cube
 
 
 ## License
