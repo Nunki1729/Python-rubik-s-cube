@@ -51,11 +51,11 @@ print(colors)
 
 Several test scripts are included:
 
-  · test_cube.py – tests performance and correctness with random algorithms
+  - test_cube.py – tests performance and correctness with random algorithms
 
-  · test_movimientos.py – verifies the correctness of move sequences
+  - test_movimientos.py – verifies the correctness of move sequences
 
-  · test_cruz_blanca.py – checks the _solve_white_cross method
+  - test_cruz_blanca.py – checks the _solve_white_cross method
 
 To run the tests:
 ```python
@@ -67,30 +67,30 @@ python3 test_cruz_blanca.py
 
 ## Cube Representation
 
-  · Edges: letters a-l with orientation 0 or 1
+  - Edges: letters a-l with orientation 0 or 1
 
-  · Corners: letters A-H with orientation 0-2
+  - Corners: letters A-H with orientation 0-2
 
-  · Orientation: tuple (center_color, rotation)
+  - Orientation: tuple (center_color, rotation)
 
 The library uses an absolute base orientation (alpha, 0) to define positions consistently.
 
 
 ## Notes
 
-· This is a learning and experimental library.
+- This is a learning and experimental library.
 
-· Currently, the library only provides basic move manipulation and white cross solving.
+- Currently, the library only provides basic move manipulation and white cross solving.
 
-· Future improvements may include:
+-  Future improvements may include:
 
-  - Adding memory to store cube states and move history
+  · Adding memory to store cube states and move history
 
-  - More solving methods
+  · More solving methods
 
-  - A set_cube_friendly() function for easier cube setup
+  · A set_cube_friendly() function for easier cube setup
 
-  - A better representation of the cube
+  · A better representation of the cube
 
 
 ## License
