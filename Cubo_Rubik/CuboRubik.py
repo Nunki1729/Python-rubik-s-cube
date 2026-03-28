@@ -1,5 +1,4 @@
-class Cube:
-    """
+"""
     SISTEMA DE REPRESENTACIÓN DEL CUBO
 
     1) ORIENTACIÓN GLOBAL
@@ -84,7 +83,10 @@ class Cube:
         amarillo en Left,
         verde en Back,
         naranja en Down.
-    """
+"""
+
+
+class Cube:
 
     """
     Posición aleatoria:
@@ -108,6 +110,8 @@ class Cube:
     Tener en cuenta la orientación del cubo (al introducir el cubo hay que paasarlo a la orientación correcta)
     """
 
+    # Constants
+    
     SOLVED_CUBE = (
         ((i, 0) for i in range(12)),
         ((i, 0) for i in range(8)),
@@ -150,6 +154,8 @@ class Cube:
         (3, 8): ("D", "L2"), (3, 9): ("D2", "L2"), (3, 10): ("D'", "L2"), (3, 11): ("L2",)
     }
 
+    # Special methods
+    
     def __init__(self):
         self._colors = {
             "up": [None] * 9,
@@ -178,19 +184,36 @@ class Cube:
         return f"Cube(edges={self._edge}, corners={self._corner}, orientation={self._orientation})"
 
     def __str__(self):
+        self.set_colors()
+    
+        face = {
+            "up": None,
+            "down": None,
+            "front": None,
+            "back": None,
+            "left": None,
+            "right": None
+        }
 
-        faces = tuple(
-            tuple(tuple(self._colors[f][i:i + 3]) for i in range(0, 9, 3))
-            for f in self._colors
-        )
-        result = []
+        for side in face:
+            face[side] = [
+                [self._colors[side][0], self._colors[side][1], self._colors[side][2]],
+                [self._colors[side][3], self._colors[side][4], self._colors[side][5]],
+                [self._colors[side][6], self._colors[side][7], self._colors[side][8]]
+            ]
 
-        for name_f in self._colors:
-            result.append(name_f + ":")
-            for f in self._colors[name_f]:
+        output = "EL CUBO AHORA MISMO:\n\n"
 
-        return str(self.set_colors())
+        for side in face:
+            output += f"{side.upper()}:\n"
+            for row in face[side]:
+                output += f"{row[0]} {row[1]} {row[2]}\n"
+            output += "-------------------------\n"
 
+        return output
+    
+    # Methods for encapsulation
+    
     def _set_edges(self, edges=SOLVED_CUBE[0]):
         self._edge = [e[:] for e in edges]
 
@@ -205,6 +228,8 @@ class Cube:
         self._set_corners(cube[1])
         self._set_orientation(cube[2])
 
+    # Useful methods
+    
     def copy(self):
         new = Cube()
 
@@ -241,11 +266,8 @@ class Cube:
 
         self._set_orientation(new_orientation)
 
-    def view_cube_set(self):
-        print(self._edge)
-        print(self._corner)
-        print(self._orientation)
-
+    # Color
+    
     def _reset_colors(self):
         self._colors = {
             "up": [None] * 9,
@@ -352,6 +374,8 @@ class Cube:
             self._colors[face][4] = color
 
         return self._colors
+    
+    # Movements
 
     def U(self):
         # Edges
@@ -515,6 +539,7 @@ class Cube:
 
         self._corner = [c[:] for c in corners]
 
+    # En desarrollo
     @staticmethod
     def _verify_algorithm(alg):
         return alg
@@ -546,6 +571,9 @@ class Cube:
     def algorithm(self, alg):
         self._apply_algorithm(self._verify_algorithm(alg))
 
+
+class Solver:
+    # En desarrollo
     def _solve_white_cross(self):
         for white_e in range(4):
             pos = next(i for i, e in enumerate(self._edge) if e[0] == white_e)
