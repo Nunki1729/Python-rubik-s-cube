@@ -92,7 +92,12 @@ The library uses an absolute base orientation (alpha, 0) to define positions con
 
       · A better representation of the cube
 
-
 ## License
 
-This project is open-source. Feel free to use, modify, and share your own improvements.
+This project is licensed under the **GNU General Public License v3.0** (GPL-3.0).  
+See the [LICENSE](./LICENSE) file for details.
+
+## Author
+
+© 2026 Javier Santiago (Nunki1729)  
+Contact: cocousnusu@gmail.com or GitHub: [Nunki1729](https://github.com/Nunki1729)
