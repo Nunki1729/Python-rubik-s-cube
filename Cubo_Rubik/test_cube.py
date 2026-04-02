@@ -1,5 +1,5 @@
 """
-    Program: <program name>
+    Program: Python rubik's cube
     Copyright (C) 2026 Javier Santiago (Nunki1729)
  
     This program is free software: you can redistribute it and/or modify
